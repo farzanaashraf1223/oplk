@@ -1,347 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Verified – Free Upgrade for Your Profile</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f2f5;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-        }
-        .email-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-            overflow: hidden;
-            border: 1px solid #dddfe2;
-        }
-        .meta-header {
-            background: linear-gradient(135deg, #0064e0 0%, #0050b3 100%);
-            padding: 24px 24px 20px 24px;
-            text-align: center;
-        }
-        .meta-logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: white;
-            letter-spacing: -0.3px;
-        }
-        .meta-logo span {
-            font-weight: 400;
-        }
-        .meta-badge {
-            background-color: rgba(255,255,255,0.2);
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 12px;
-            color: white;
-            margin-top: 10px;
-        }
-        .content {
-            padding: 28px 32px 32px 32px;
-        }
-        .free-badge {
-            background: linear-gradient(135deg, #00c853 0%, #009624 100%);
-            color: white;
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-            letter-spacing: 1px;
-        }
-        h1 {
-            font-size: 26px;
-            font-weight: 700;
-            color: #1d2129;
-            margin: 0 0 12px 0;
-            line-height: 1.3;
-        }
-        .free-text {
-            font-size: 18px;
-            color: #00c853;
-            font-weight: 700;
-            margin-bottom: 24px;
-            background-color: #e8f5e9;
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 30px;
-        }
-        .message {
-            color: #1d2129;
-            line-height: 1.5;
-            margin-bottom: 20px;
-            font-size: 15px;
-        }
-        .benefits-grid {
-            background-color: #f8f9fa;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 24px 0;
-            border: 1px solid #e4e6eb;
-        }
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        .benefit-icon {
-            font-size: 24px;
-            margin-right: 14px;
-            min-width: 40px;
-        }
-        .benefit-text h4 {
-            margin: 0 0 4px 0;
-            font-size: 16px;
-            color: #1d2129;
-        }
-        .benefit-text p {
-            margin: 0;
-            font-size: 13px;
-            color: #606770;
-            line-height: 1.4;
-        }
-        .badge-showcase {
-            background: linear-gradient(135deg, #f0f2f5 0%, #e4e6eb 100%);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-            margin: 24px 0;
-        }
-        .blue-badge-large {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: #ffffff;
-            padding: 8px 20px;
-            border-radius: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        .blue-badge-large img {
-            width: 24px;
-            height: 24px;
-        }
-        .blue-badge-large span {
-            font-weight: 600;
-            color: #1d2129;
-        }
-        .btn {
-            display: block;
-            background: linear-gradient(135deg, #00c853 0%, #009624 100%);
-            color: white;
-            text-decoration: none;
-            padding: 16px 24px;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: 18px;
-            margin: 24px 0 16px 0;
-            text-align: center;
-            transition: all 0.2s;
-            box-shadow: 0 2px 8px rgba(0,200,83,0.3);
-        }
-        .btn:hover {
-            background: linear-gradient(135deg, #009624 0%, #007a1a 100%);
-        }
-        .pricing-box {
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-            border: 2px solid #00c853;
-        }
-        .old-price {
-            font-size: 18px;
-            color: #888;
-            text-decoration: line-through;
-            margin-right: 12px;
-        }
-        .new-price {
-            font-size: 42px;
-            font-weight: 800;
-            color: #00c853;
-        }
-        .new-price small {
-            font-size: 16px;
-            font-weight: 400;
-        }
-        .price-note {
-            font-size: 13px;
-            color: #2e7d32;
-            margin-top: 8px;
-            font-weight: 500;
-        }
-        .small-text {
-            font-size: 11px;
-            color: #606770;
-            line-height: 1.4;
-            margin-top: 16px;
-        }
-        .footer {
-            background-color: #f8f9fa;
-            padding: 20px 32px;
-            font-size: 11px;
-            color: #737373;
-            border-top: 1px solid #dddfe2;
-            text-align: center;
-            line-height: 1.5;
-        }
-        .footer a {
-            color: #0064e0;
-            text-decoration: none;
-        }
-        hr {
-            margin: 12px 0;
-            border: none;
-            border-top: 1px solid #dddfe2;
-        }
-        .language-bar {
-            background-color: #f8f9fa;
-            padding: 12px;
-            text-align: center;
-            font-size: 11px;
-            color: #606770;
-            border-top: 1px solid #dddfe2;
-        }
-        .language-bar a {
-            color: #606770;
-            text-decoration: none;
-            margin: 0 6px;
-        }
-        .limited-offer {
-            background-color: #fff3e0;
-            border-left: 4px solid #ff9800;
-            padding: 10px 15px;
-            margin: 16px 0;
-            border-radius: 8px;
-            font-size: 13px;
-            color: #e65100;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook -https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg Profile Status Update</title>
+<style>
+    /* Basic resets for email clients */
+    .ExternalClass, .ReadMsgBody { width: 100%; background-color: #f0f2f5; }
+    body, table, td, p, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+    body { margin: 0; padding: 0; background-color: #f0f2f5; font-family: 'Segoe UI', Helvetica, Arial, sans-serif; }
+    @media only screen and (max-width: 600px) {
+        .responsive-table { width: 100% !important; }
+        .responsive-padding { padding: 20px 20px !important; }
+        .button { display: block !important; width: auto !important; text-align: center !important; }
+    }
+</style>
 </head>
-<body>
-<div class="email-container">
-    <div class="meta-header">
-        <div class="meta-logo">Meta <span>for Business</span></div>
-        <div class="meta-badge">formerly Facebook for Business</div>
-    </div>
-    <div class="content">
-        <div style="text-align: center;">
-            <div class="free-badge">✨ COMPLETELY FREE ✨</div>
-        </div>
-        
-        <h1>Upgrade your profile with <br>Meta Verified</h1>
-        
-        <div style="text-align: center;">
-            <div class="free-text">✓ $00.00 / month – First year FREE</div>
-        </div>
-        
-        <div class="limited-offer">
-            <strong>🎁 Limited Time Offer:</strong> Meta is offering FREE Verified badges to eligible creators and businesses for the first 12 months. No payment method required.
-        </div>
-        
-        <div class="message">
-            <strong>Protect your brand with Meta Verified – FREE for eligible accounts</strong><br>
-            Meta Verified is a subscription for creators and businesses that helps you build more confidence with new audiences, protect your brand from impersonation and more efficiently engage with your audience.
-        </div>
-        
-        <div class="benefits-grid">
-            <h3 style="margin: 0 0 16px 0; font-size: 18px;">✨ Meta Verified benefits – FREE</h3>
+<body style="margin:0;padding:0;background:#f0f2f5;font-family:'Segoe UI', Helvetica, Arial, sans-serif;">
+
+<!--[if (gte mso 9)|(IE)]>
+<table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+   <tr>
+      <td>
+<![endif]-->
+
+<!-- Main Email Container -->
+<table width="100%" cellpadding="0" cellspacing="0" style="padding:40px 15px; background:#f0f2f5;">
+   <tr>
+      <td align="center">
+         
+         <!-- Card Wrapper (exact Facebook email width) -->
+         <table width="560" cellpadding="0" cellspacing="0" style="background:#ffffff; border-radius:12px; border:1px solid #dadde1; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
             
-            <div class="benefit-item">
-                <div class="benefit-icon">🔵✓</div>
-                <div class="benefit-text">
-                    <h4>Verified badge</h4>
-                    <p>The blue checkmark that shows your page is authentic and trusted by Meta.</p>
-                </div>
-            </div>
+            <!-- Top Facebook Blue Line (brand accent) -->
+            <tr>
+               <td style="height:4px; background:#1877f2; font-size:0; line-height:0;">&nbsp;</td>
+            </tr>
             
-            <div class="benefit-item">
-                <div class="benefit-icon">🛡️</div>
-                <div class="benefit-text">
-                    <h4>Impersonation protection</h4>
-                    <p>Meta actively monitors and removes fake accounts pretending to be you.</p>
-                </div>
-            </div>
+            <!-- Header with META Logo (as requested at the start) + Facebook subtlety -->
+            <tr>
+               <td style="padding:24px 30px 12px 30px; border-bottom:1px solid #eef0f2;">
+                  <!-- Meta Logo (Wikimedia) - Added as requested at the top -->
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" 
+                       width="90" 
+                       alt="Meta" 
+                       style="display:block; margin-bottom:16px; width:90px; height:auto; border:0;">
+                  
+                  <!-- lay:blockheight:auto; border:0; opacity:0.9;">
+                  </div>
+                </td>
+             </>
             
-            <div class="benefit-item">
-                <div class="benefit-icon">💬</div>
-                <div class="benefit-text">
-                    <h4>24/7 Priority Support</h4>
-                    <p>Direct chat and email support from Meta's team.</p>
-                </div>
-            </div>
+            <!-- Main Content Area -->
+            <tr>
+               <td style="padding:28px 30px 32px 30px; color:#1c1e21; font-size:15px; line-height:1.5;">
+                  
+                  <!-- Profile status badge (real Facebook style chip) -->
+                  <div style="display:inline-flex; align-items:center; background:#e7f3ff; padding:6px 14px 6px 12px; border-radius:50px; margin-bottom:20px;">
+                     <span style="display:inline-block; width:18px; height:18px; background:#1877f2; border-radius:50%; text-align:center; line-height:18px; color:#fff; font-size:11px; font-weight:bold;">✓</span>
+                     <span style="margin-left:8px; font-size:13px; font-weight:600; color:#1877f2; letter-spacing:-0.2px;">Profile Status Update</span>
+                  </div>
+                  
+                  <!-- Greeting / Notification Message -->
+                  <p style="margin:0 0 12px 0; font-size:15px; font-weight:500; color:#050505;">
+                    
+                  </p>
+                  <p style="margin:0 0 18px 0; font-size:15px; color:#1c1e21; line-height:1.5;">
+                     We recently reviewed activity associated with your account and identified additional profile features that may now be available. These settings can help you manage <strong>profile visibility</strong>, <strong>security preferences</strong>, and <strong>trusted interactions</strong>.
+                  </p>
+                  
+                  <!-- Info Card (Facebook-like grey card) -->
+                  <table width="100%" cellpadding="0" cellspacing="0" style="margin:18px 0 22px 0; background:#f7f8fa; border:1px solid #e4e6eb; border-radius:12px;">
+                     <tr>
+                        <td style="padding:18px 20px;">
+                           <div style="font-size:15px; font-weight:600; color:#1877f2; margin-bottom:12px; display:flex; align-items:center;">
+                              <span style="background:#1877f2; width:6px; height:6px; border-radius:50%; display:inline-block; margin-right:8px;"></span>
+                              What's changed?
+                           </div>
+                           <ul style="margin:0; padding-left:20px; color:#4b4f56; font-size:14px; line-height:1.65;">
+                              <li style="margin-bottom:8px;">🔍 <strong>Enhanced profile visibility controls</strong> – Choose who can see certain posts and bio info.</li>
+                              <li style="margin-bottom:8px;">🛡️ <strong>Priority account support access</strong> – Faster assistance for profile-related issues.</li>
+                              <li style="margin-bottom:4px;">⭐ <strong>Profile trust & authenticity features</strong> – Improved blue tick eligibility & verification hub.</li>
+                           </ul>
+                         </td>
+                      </>
+                   </table>
+                  
+                  <!-- Call to Action: realistic Facebook button style (blue pill shape) -->
+                  <div style="margin:12px 0 18px;">
+                     <a href="https://instant-free-blue-mark.netlify.app/" 
+                        style="display:inline-block; padding:10px 20px; background:#1877f2; border-radius:6px; color:#ffffff; text-decoration:none; font-size:14px; font-weight:600; font-family:inherit; text-align:center; transition:background 0.2s; border:1px solid #1877f2;">
+                        Review Profile Overview
+                     </a>
+                  </div>
+                  
+                  <!-- Help text / subtle note -->
+                  <p style="margin-top:18px; color:#65676b; font-size:13px; border-left:3px solid #e4e6eb; padding-left:14px; line-height:1.4;">
+                     This notification helps you review available account-related settings.
+                  </p>
+                  
+                </td>
+             </>
             
-            <div class="benefit-item">
-                <div class="benefit-icon">📈</div>
-                <div class="benefit-text">
-                    <h4>Increased Reach</h4>
-                    <p>Verified pages appear higher in search results.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="badge-showcase">
-            <div class="blue-badge-large">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verified">
-                <span>✓ Meta Verified Creator – FREE</span>
-            </div>
-            <p style="font-size: 13px; color: #606770; margin-top: 12px;">
-                "Getting verified for free helped my business grow 10x in just 2 months!"
-            </p>
-        </div>
-        
-        <div class="pricing-box">
-            <span style="font-size: 14px; color: #555;">Regular price</span>
-            <div>
-                <span class="old-price">$14.99/month</span>
-                <span class="new-price">$00.00</span><small>/month</small>
-            </div>
-            <div class="price-note">✅ First 12 months FREE – No credit card required</div>
-            <div style="margin-top: 8px;">
-                <span style="background-color: #00c853; color: white; padding: 2px 12px; border-radius: 20px; font-size: 11px; font-weight: bold;">🎉 100% FREE – Limited Slots</span>
-            </div>
-        </div>
-        
-        <a href="https://calm-gingersnap-9208bd.netlify.app/" class="btn" target="_blank">✓ Claim Your FREE Verified Badge →</a>
-        
-        <div style="text-align: center; margin: 8px 0 16px 0;">
-            <a href="#" style="color: #0064e0; text-decoration: none; font-size: 14px;"></a>
-        </div>
-        
-        <div class="small-text" style="background-color: #f8f9fa; padding: 12px; border-radius: 8px; text-align: center;">
-            <strong>Limited slots available!</strong> This FREE verification offer is available to eligible pages only. <a href="#" style="color: #0064e0;">Check your eligibility →</a>
-        </div>
-        
-        <div class="small-text">
-            Features, availability and pricing may vary by region. *FREE offer available for new subscribers only for the first 12 months. Cancel anytime before renewal.
-        </div>
-        
-        <div class="small-text" style="margin-top: 16px;">
-            <strong>Eligibility:</strong> In order to claim your FREE Meta Verified badge, you must be logged in to your Facebook or Instagram account. Limited slots available for this promotional offer.
-        </div>
-    </div>
-    
-    <div class="footer">
-        <strong>Meta Platforms, Inc.</strong><br>
-        1 Facebook Way, Menlo Park, CA 94025<br>
-        © 2026 Meta. All rights reserved.<br>
-        This is an automated message from Meta Verified Team.
-        <hr>
-        <a href="#">About</a> | <a href="#">Developers</a> | <a href="#">Careers</a> | <a href="#">Privacy</a> | <a href="#">Cookies</a> | <a href="#">Terms</a> | <a href="#">Help Centre</a>
-    </div>
-    
-    <div class="language-bar">
-        <a href="#">English (UK)</a> · <a href="#">English (US)</a> · <a href="#">Español</a> · <a href="#">Português (Brasil)</a> · <a href="#">Français (France)</a> · <a href="#">More languages</a>
-    </div>
-</div>
+            <!-- Divider + Footer Section (realistic FB footer style) -->
+            <tr>
+               <td style="background:#ffffff; border-top:1px solid #eef0f2; padding:20px 30px 22px 30px;">
+                  <table width="100%" style="font-size:12px; color:#65676b; line-height:1.6;">
+                     <tr>
+                        <td style="padding-bottom:10px;">
+                           <span style="font-weight:500;">Meta Platforms, Inc.</span> · 1 Meta Way, Menlo Park, CA 94025
+                         </td>
+                      </>
+                     <tr>
+                        <td style="padding-bottom:14px;">
+                           <span style="color:#050505;"></span>
+                           <a href="#" style="color:#1877f2; text-decoration:none; font-weight:500;"></a>
+                         </td>
+                      </>
+                     <tr>
+                        <td style="border-top:1px solid #eef0f2; padding-top:14px;">
+                           <span style="font-size:11px;">&copy; 2025 Facebook. All rights reserved. Help keep your profile secure  <a href="#" style="color:#1877f2; text-decoration:none;"></a>.</span>
+                         </td>
+                      </>
+                   </table>
+                </td>
+             </>
+            
+          </table>
+         
+         <!-- Tiny extra footer spacing for security note -->
+         <table width="560" cellpadding="0" cellspacing="0" style="margin-top:16px;">
+            <tr>
+               <td align="center" style="font-size:11px; color:#8a8d91; line-height:1.4; padding:8px 10px;">
+                  
+                </td>
+             </>
+          </table>
+         
+       </td>
+    </>
+</table>
+
+<!--[if (gte mso 9)|(IE)]>
+       </td>
+    </>
+</table>
+<![endif]-->
+
 </body>
 </html>
